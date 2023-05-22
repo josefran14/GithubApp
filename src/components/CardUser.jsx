@@ -1,14 +1,11 @@
 import {
   Avatar,
   Box,
-  Button,
-  CardActions,
   CardContent,
   Stack,
   Typography,
 } from "@mui/material";
 import React from "react";
-import { useEffect } from "react";
 
 export const CardUser = ({ user }) => {
 
@@ -24,7 +21,7 @@ export const CardUser = ({ user }) => {
   return (
     <Box>
       <CardContent
-        sx={{ border: "2px solid blue", minHeight: "250px", marginTop: "15px", bgcolor: "#13191c" }}
+        sx={{ minHeight: "250px", marginTop: "15px", bgcolor: "#13191c" }}
       >
         <Box
           sx={{

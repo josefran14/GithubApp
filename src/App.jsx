@@ -1,4 +1,6 @@
+import { Typography } from "@mui/material"
 import { useState, useEffect } from "react"
+import { CardLogo } from "./components/CardLogo"
 import { CardUser } from "./components/CardUser"
 import { SearchBar } from "./components/SearchBar"
 import { getAllUsers } from "./helpers/getAllUsers"
@@ -18,12 +20,16 @@ export const App = () => {
     
   return (
     <>
-    <h1 style={{display: "flex", justifyContent: "center"}}>GithubApp</h1>
+    <Typography variant="h4" style={{display: "flex", justifyContent: "center"}}>GithubApp</Typography>
     <SearchBar getUsers={getUsers}/>
-    {
-      users.map((user) =>(
-        <CardUser key={user.id} user={user}/>
-      ))
+     {
+        users.map((user) =>(
+            user !== undefined
+            ?
+            <CardUser key={user.id} user={user}/>
+            :
+            <CardLogo key={Date.now()}/>
+        ))
     }
     </>
   )
