@@ -1,8 +1,8 @@
-import { Typography } from "@mui/material"
+import { Box } from "@mui/material"
 import { useState, useEffect } from "react"
 import { CardLogo } from "./components/CardLogo"
-import { CardUser } from "./components/CardUser"
 import { SearchBar } from "./components/SearchBar"
+import { UserCard } from "./components/UserCard"
 import { getAllUsers } from "./helpers/getAllUsers"
 
 export const App = () => {
@@ -19,18 +19,17 @@ export const App = () => {
     }, [])
     
   return (
-    <>
-    <Typography variant="h4" style={{display: "flex", justifyContent: "center"}}>GithubApp</Typography>
+    <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
     <SearchBar getUsers={getUsers}/>
      {
         users.map((user) =>(
             user !== undefined
             ?
-            <CardUser key={user.id} user={user}/>
+            <UserCard user={user}/>
             :
             <CardLogo key={Date.now()}/>
         ))
     }
-    </>
+    </Box>
   )
 }

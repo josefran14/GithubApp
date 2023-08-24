@@ -1,0 +1,7 @@
+body{
+    background-color: #141c2f;
+}
+
+::placeholder {
+    color: #ab34c5;
+  }
