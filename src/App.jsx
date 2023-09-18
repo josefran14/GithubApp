@@ -25,7 +25,7 @@ export const App = () => {
         users.map((user) =>(
             user !== undefined
             ?
-            <UserCard user={user}/>
+            <UserCard key={Date.now()} user={user}/>
             :
             <CardLogo key={Date.now()}/>
         ))

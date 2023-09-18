@@ -74,7 +74,7 @@ export const UserCard = ({ user }) => {
                 {name}
               </Typography>
               {bio !== null ? (
-                <Typography sx={{ color: "#888f9e", marginTop: "20px" }}>
+                <Typography sx={{ color: "white", marginTop: "20px" }}>
                   {bio}
                 </Typography>
               ) : (
@@ -86,9 +86,9 @@ export const UserCard = ({ user }) => {
             {/* Fecha */}
             <Box sx={{ width: "50%" }}>
               <Typography
-                sx={{ color: "#888f9e", marginTop: "10px", fontWeight: "bold" }}
+                sx={{ color: "#888f9e", marginTop: "10px", fontWeight: "bold", marginLeft: "100px" }}
               >
-                {created_at}
+                Joined {new Date(created_at).toLocaleDateString()}
               </Typography>
             </Box>
           </Box>
